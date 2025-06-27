@@ -38,7 +38,9 @@ Account& Bank::createAccount(int initial)
     }
     _usedIds.insert(newId);
     _accounts.push_back(Account(newId, 0));
-    deposit(newId, initial);
+    std::cout << "Created account with ID: " << newId << std::endl;
+    if (initial)
+        deposit(newId, initial);
     return _accounts.back();
 }
 
@@ -60,7 +62,7 @@ void Bank::deleteAccount(int id)
 void Bank::deposit(int id, int amount)
 {
     if (amount <= 0) {
-        throw std::runtime_error("Account not found");
+        throw std::runtime_error("Deposit amount must be positive");
     }
 
     AccountIterator it = findAccount(id);
@@ -103,8 +105,8 @@ std::ostream& operator<<(std::ostream &os, const Bank &bank)
 {
     os << "Bank liquidity: " << bank._liquidity << "\n";
     os << "Accounts:\n";
-    for (const auto &account : bank._accounts) {
-        os << account << "\n";
+    for (Bank::ConstAccountIterator it = bank._accounts.begin(); it != bank._accounts.end(); ++it) {
+        os << *it << "\n";
     }
     return os;
 }

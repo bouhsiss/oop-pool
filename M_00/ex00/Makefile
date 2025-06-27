@@ -3,7 +3,7 @@ CC	= c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS = ./Account.cpp \
 	   ./Bank.cpp \
-	   ./main.cpp \
+	   ./main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME) :

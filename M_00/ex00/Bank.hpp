@@ -4,21 +4,24 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <list>
+
+#include "Account.hpp"
 
 class Bank {
     private:
         int _liquidity;
-        std::vector<Account> _accounts;
+        std::list<Account> _accounts;
         std::set<int> _usedIds;
 
         static const float FEE_RATE;
 
+        // accounts iterators
+        typedef std::list<Account>::iterator AccountIterator;
+        typedef std::list<Account>::const_iterator ConstAccountIterator;
+
         // get account by ID
         AccountIterator findAccount(int id);
-
-        // accounts iterators
-        typedef std::vector<Account>::iterator AccountIterator;
-        typedef std::vector<Account>::const_iterator ConstAccountIterator;
     
     public:
         Bank(void);

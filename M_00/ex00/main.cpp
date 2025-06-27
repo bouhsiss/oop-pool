@@ -19,7 +19,7 @@ void tryDeposit(Bank& bank, int id, int amount) {
     }
 }
 
-const tryWithdraw(Bank& bank, int id, int amount) {
+void tryWithdraw(Bank& bank, int id, int amount) {
     try {
         bank.withdraw(id, amount);
         std::cout << "Withdrawal of " << amount << " from account " << id << " successful." << std::endl;
