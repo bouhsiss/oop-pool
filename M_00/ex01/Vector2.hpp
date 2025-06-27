@@ -14,8 +14,6 @@ class Vector2 {
         int getX() const;
         int getY() const;
 
-        // setters
-        void set(int x, int y);
 
         friend std::ostream& operator<<(std::ostream& os, const Vector2& v);
 };
