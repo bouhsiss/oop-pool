@@ -1,9 +1,15 @@
 #include "Vector2.hpp"
 
-Vector2::Vector2(int x, int y) : _x(x), _y(y) {}
+Vector2::Vector2(int x, int y) {
+    if (x < 0 || y < 0) {
+        throw std::runtime_error("Coordinates cannot be negative");
+    }
+    _x = x;
+    _y = y;
+}
 
-int Vector2::getX() const { return _x; }
-int Vector2::getY() const { return _y; }
+const int& Vector2::getX() const { return _x; }
+const int& Vector2::getY() const { return _y; }
 
 
 std::ostream& operator<<(std::ostream& os, const Vector2& v) {

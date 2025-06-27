@@ -11,8 +11,8 @@ class Vector2 {
         Vector2(int x, int y);
 
         // getters
-        int getX() const;
-        int getY() const;
+        const int& getX() const;
+        const int& getY() const;
 
 
         friend std::ostream& operator<<(std::ostream& os, const Vector2& v);

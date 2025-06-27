@@ -2,15 +2,10 @@
 #include <iostream>
 #include <iomanip>
 
-Graph::Graph(const Vector2& size) {
-    if (size.getX() < 0 || size.getY() < 0)
-        throw std::runtime_error("Graph size cannot be negative");
-    _size = size;
-}
+Graph::Graph(const Vector2& size) : _size(size) {}
 
 void Graph::addPoint(const Vector2& point) {
-    if (point.getX() < 0 || point.getY() < 0 ||
-        point.getX() > _size.getX() || point.getY() > _size.getY())
+    if ( point.getX() > _size.getX() || point.getY() > _size.getY())
         throw std::runtime_error("Point out of bounds");
     _points.push_back(point);
 }

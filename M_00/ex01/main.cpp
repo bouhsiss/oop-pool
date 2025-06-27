@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    Graph graph(Vector2(2, 5));
+    Graph graph(Vector2(5, 5));
 
 
     graph.addPoint(Vector2(0,0));
