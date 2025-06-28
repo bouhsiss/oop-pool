@@ -15,7 +15,7 @@ void Graph::draw() const {
     int h = _size.getY();
 
     for (int y = h; y >= 0; --y) {
-        std::cout << std::setw(2) << y << " ";
+        std::cout << " " << y << " ";
         for (int x = 0; x <= w; ++x) {
             bool mark = false;
             std::vector<Vector2>::const_iterator it;
@@ -25,14 +25,14 @@ void Graph::draw() const {
                     break;
                 }
             }
-            std::cout << std::setw(2) << (mark ? 'X' : '.' ) << " ";
+            std::cout << " " << (mark ? 'X' : '.' ) << " ";
         }
         std::cout << std::endl;
     }
 
     std::cout << "   ";
     for (int x = 0; x <= w; ++x) {
-        std::cout << std::setw(2) << x << " ";
+        std::cout << " " << x << " ";
     }
     std::cout << std::endl;
 }

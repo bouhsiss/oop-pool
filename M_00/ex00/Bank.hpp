@@ -12,7 +12,6 @@ class Bank {
     private:
         int _liquidity;
         std::list<Account> _accounts;
-        std::set<int> _usedIds;
 
         static const float FEE_RATE;
 
