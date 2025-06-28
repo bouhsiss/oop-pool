@@ -33,10 +33,7 @@ const int& Bank::getLiquidity() const
 Account& Bank::createAccount(int initial)
 {
     int newId = _accounts.empty() ? 1 : _accounts.back().getId() + 1;
-    if (_usedIds.count(newId)) {
-        throw std::runtime_error("Duplicate account ID");
-    }
-    _usedIds.insert(newId);
+
     _accounts.push_back(Account(newId, 0));
     std::cout << "Created account with ID: " << newId << std::endl;
     if (initial)
@@ -54,7 +51,6 @@ void Bank::deleteAccount(int id)
         throw std::runtime_error("Cannot delete account with positive balance");
     }
 
-    _usedIds.erase(id);
     _accounts.erase(it);
 }
 
