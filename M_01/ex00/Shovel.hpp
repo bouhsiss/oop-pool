@@ -1,24 +1,15 @@
 #ifndef SHOVEL_HPP
 #define SHOVEL_HPP
 
-#include <iostream>
+#include "Tool.hpp"
 
-class Worker;
 
-class Shovel {
-    private:
-        int numberOfUses;
-        Worker* owner;
-    
+class Shovel : public Tool {
     public:
         Shovel();
-        ~Shovel();
+        virtual ~Shovel();
 
-        void use();
-        int getUses() const;
-
-        Worker* getOwner() const;
-        void setOwner(Worker* newOwner);
+        virtual void use();
 };
 
 #endif

@@ -3,23 +3,24 @@
 
 #include "Position.hpp"
 #include "Statistic.hpp"
-#include "Shovel.hpp"
+#include "Tool.hpp"
 #include <iostream>
 
 class Worker {
     private:
         Position coordonnee;
         Statistic stat;
-        Shovel* shovel;
+        std::vector<Tool*> tools;
 
     public:
         Worker();
         Worker(const Position& position, const Statistic& statistic);
         ~Worker();
 
-        void giveShovel(Shovel* newShovel);
-        void takeShovel();
-        void useShovel() const;
+        void addTool(Tool* tool);
+        void removeTool(Tool* tool);
+        void useTools() const;
+
 
         void print() const;
 };

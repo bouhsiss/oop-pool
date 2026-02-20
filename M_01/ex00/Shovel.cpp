@@ -12,9 +12,3 @@ void Shovel::use() {
     numberOfUses++;
     std::cout << "Shovel used " << numberOfUses << " times" << std::endl;
 }
-int Shovel::getUses() const {
-    return numberOfUses;
-}
-
-Worker* Shovel::getOwner() const { return owner; }
-void Shovel::setOwner(Worker* newOwner) { owner = newOwner; }
