@@ -6,9 +6,9 @@
 class Hammer : public Tool {
     public:
         Hammer();
-        virtual ~Hammer();
+        ~Hammer();
 
-        virtual void use();
+        void use();
 };
 
 #endif

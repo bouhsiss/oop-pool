@@ -11,5 +11,3 @@ Tool::~Tool() {
 Worker* Tool::getOwner() const { return owner; }
 
 void Tool::setOwner(Worker* newOwner) { owner = newOwner; }
-
-int Tool::getUses() const { return numberOfUses; }

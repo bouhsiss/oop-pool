@@ -18,7 +18,6 @@ class Tool {
 
         Worker* getOwner() const;
         void setOwner(Worker* newOwner);
-        itn getUses() const;
-}
+};
 
 #endif

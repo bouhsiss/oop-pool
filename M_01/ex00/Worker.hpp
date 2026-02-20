@@ -5,6 +5,7 @@
 #include "Statistic.hpp"
 #include "Tool.hpp"
 #include <iostream>
+#include <vector>
 
 class Worker {
     private:

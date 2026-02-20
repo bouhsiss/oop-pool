@@ -7,9 +7,9 @@
 class Shovel : public Tool {
     public:
         Shovel();
-        virtual ~Shovel();
+        ~Shovel();
 
-        virtual void use();
+        void use();
 };
 
 #endif

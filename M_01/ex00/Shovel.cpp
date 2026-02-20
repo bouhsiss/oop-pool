@@ -1,6 +1,6 @@
 #include "Shovel.hpp"
 
-Shovel::Shovel() : numberOfUses(0), owner(NULL) {
+Shovel::Shovel(){
     std::cout << "Shovel default constructor called" << std::endl;
 }
 
