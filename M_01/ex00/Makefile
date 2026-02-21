@@ -7,7 +7,8 @@ SRCS = ./main.cpp \
 		./Statistic.cpp \
 		./Shovel.cpp \
 		./Tool.cpp \
-		./Hammer.cpp 
+		./Hammer.cpp \
+		./Workshop.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

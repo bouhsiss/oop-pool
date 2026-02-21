@@ -1,6 +1,7 @@
 #include "Worker.hpp"
 #include "Shovel.hpp"
 #include "Hammer.hpp"
+#include "Workshop.hpp"
 
 int main()
 {
@@ -34,6 +35,28 @@ int main()
     std::cout << "\n=== Remove hammer from w1 and test ===\n";
     w1.removeTool(&hammer);
     w1.useTools();
+
+    std::cout << "\n=== Create workshops ===\n";
+    Workshop wsA;
+    Workshop wsB;
+
+    std::cout << "\n=== Workers try to work before registering ===\n";
+    w1.work();
+    w2.work();
+
+    std::cout << "\n=== Register workers (w1 in both, w2 in A) ===\n";
+    w1.joinWorkshop(&wsA);
+    w1.joinWorkshop(&wsB);
+    w2.joinWorkshop(&wsA);
+
+    std::cout << "\n=== Execute work days ===\n";
+    wsA.executeWorkDay();
+    wsB.executeWorkDay();
+
+    std::cout << "\n=== w1 leaves A, execute again ===\n";
+    w1.leaveWorkshop(&wsA);
+    wsA.executeWorkDay();
+    wsB.executeWorkDay();
 
     std::cout << "\n=== End (tools destroyed once, workers destroyed, Tool base destructors should run too) ===\n";
     return 0;
